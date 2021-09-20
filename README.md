@@ -3,7 +3,7 @@ Personal terminal setup and tweaks
 
 ## Features
 
-###Personalised prompt
+### Personalised prompt
 [user]@[hostname]:[path] at [time] [branch] >
 ![Personalised Prompt](./screenshots/prompt.jpg)
 
