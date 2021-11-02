@@ -19,5 +19,5 @@ elif [ -n "$BASH_VERSION" ]; then
    echo "Bash"
    cp bash/.bash_aliases ~
    cat bash/prompt.bash >> ~/.bashrc
-   source ~./bashrc
+   source ~/.bashrc
 fi
