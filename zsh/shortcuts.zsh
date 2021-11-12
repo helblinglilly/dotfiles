@@ -64,6 +64,10 @@ function b2d(){
 	printf '%x\n' "$((2#$1))"
 }
 
+function tomp4(){
+	ffmpeg -i $1 -vcodec h264 -acodec aac "${1}.mp4"
+	rm $1
+}
 # Add Decimal to ASCII
 # Add Hex to ASCII
 # Add bitwise operations (AND, OR, XOR etc)
