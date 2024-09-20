@@ -1,5 +1,4 @@
-
-function gitHelp(){
+function gitCheatSheet(){
 	echo "Checkout"
 	echo "   Checkout to branch:"
 	echo "      > git switch [branchname]\n"
@@ -31,9 +30,10 @@ function gitHelp(){
 	echo "   List remote branches:"
 	echo "      > git branch -r\n"
 	echo "   Rename branch:"
-	echo "      > git branch -m [newName]       Rename"      
+	echo "      > git branch -m [newName]       Rename"
 	echo "      > git push origin -u [newName]  Push new name"
-	echo "      > git push origin -d [old]      Delete remote with old name\n"
+	echo "      > git push origin -d [old]      Delete remote with old name"
+	echo "      > branchRename [newName]		Do all the above\n"
 	echo "   Delete local branch:"
 	echo "      > git branch -d [branchname]\n"
 	echo "   Delete remote branch:"
@@ -42,10 +42,23 @@ function gitHelp(){
 	echo "Pushing"
 	echo "   Push changes to new branch:"
 	echo "      > git push --set-upstream origin [branchname]\n"
+	echo ""
+	echo "Rebase"
+	echo "  Rewrite commit history of past x commits"
+	echo "    > git rebase -i HEAD~[numberOfCommits]"
+	echo "  Rebase with remote master"
+	echo "    > git pull --rebase origin master"
 }
 
 function hotfix(){
     git add .
     git commit -m $1
     git push
+}
+
+function branchRename(){
+	OLD_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+	git branch -m $1
+	git push origin -u $1
+	git push origin -d "$OLD_BRANCH"
 }
