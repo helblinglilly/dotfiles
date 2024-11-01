@@ -7,6 +7,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo "mac"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew install firefox
+    brew install zed
+    cp zed ~/.config/zed
 fi
 
 if [ -n "$ZSH_VERSION" ]; then

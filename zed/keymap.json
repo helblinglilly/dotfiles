@@ -1,0 +1,8 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-tab": "terminal_panel::ToggleFocus"
+    }
+  }
+]
