@@ -62,3 +62,7 @@ function branchRename(){
 	git push origin -u $1
 	git push origin -d "$OLD_BRANCH"
 }
+
+function glog(){
+  git log --format=format:"%Cgreen%ah%Creset %Cred%h%Creset %C(yellow)%an%Creset %n%s%n%n%b%n" "$@"
+}
