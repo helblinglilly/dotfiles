@@ -98,6 +98,7 @@
     }
   },
   "file_types": {
-    "SCSS": ["*.SCSS"] // Were still being treated as .css files
+    "SCSS": ["*.SCSS"], // Were still being treated as .css files
+    "Terraform": ["*.tofu"] // No extension for OpenTofu stuff
   }
 }
