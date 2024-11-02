@@ -2,8 +2,10 @@
   {
     "context": "Editor",
     "bindings": {
-      "alt-j": "editor::MoveLineUp",
-      "alt-k": "editor::MoveLineDown"
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown",
+      "alt-shift-k": "editor::DuplicateLineUp",
+      "alt-shift-j": "editor::DuplicateLineDown"
     }
   },
   {
