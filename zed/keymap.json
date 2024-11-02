@@ -1,5 +1,12 @@
 [
   {
+    "context": "Editor",
+    "bindings": {
+      "alt-j": "editor::MoveLineUp",
+      "alt-k": "editor::MoveLineDown"
+    }
+  },
+  {
     "context": "Workspace",
     "bindings": {
       "alt-tab": "terminal_panel::ToggleFocus"
