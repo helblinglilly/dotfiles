@@ -1,0 +1,76 @@
+{
+  "reactFn": {
+    "description": "Creates a react functional component",
+    "prefix": "reactFn",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export const $1 = ({} : {}) => {",
+      "  return (",
+      "    <>$0</>",
+      "  );",
+      "}"
+    ]
+  },
+  "rnstyle": {
+    "description": "Creates a react native stylesheet - not a hook. Use rnstylehook for that",
+    "prefix": "rnstyle",
+    "body": [
+      "import { StyleSheet } from 'react-native';",
+      "",
+      "export const styles = StyleSheet.create({",
+      "  container: {",
+      "    $0",
+      "  },",
+      "});"
+    ]
+  },
+  "rnstylehook": {
+    "description": "Creates a react native stylesheet hook",
+    "prefix": "rnstylehook",
+    "body": [
+      "import { StyleSheet } from 'react-native';",
+      "import { useResponsive } from 'react-native-responsive-hook';",
+      "",
+      "import { isLargeDevice } from '@theme/breakpoints';",
+      "",
+      "export const useStyles = () => {",
+      "  const styles = StyleSheet.create({",
+      "    container: {",
+      "     width: isLargeDevice(breakPointGroup) ? '30%' : '50%'",
+      "     $0",
+      "    }",
+      "  })",
+      "  return { styles }",
+      "}"
+    ]
+  },
+  "mockReact": {
+    "description": "Mocks a react component and places a div with its name",
+    "prefix": "mockReact",
+    "body": ["jest.mock('$1', () => () => {", "  return <div>$2</div>;", "});$0"]
+  },
+  "mockHook": {
+    "description": "Mocks a hook and its return value after being called",
+    "prefix": "mockHook",
+    "body": ["jest.mock('$1', () => () => ({", " $2: $3,", "}));"]
+  },
+  "mockFn": {
+    "description": "Mock an exported function from a module",
+    "prefix": "mockFn",
+    "body": ["jest.mock('$1', () => ({", "  $2: jest.fn(),", "}));", "$0"]
+  },
+  "waitPromise": {
+    "description": "Creates an empty promise and resolves it after 1 sec",
+    "prefix": "waitPromise",
+    "body": [
+      "await new Promise(res => {",
+      "  setTimeout(() => {",
+      "    $1",
+      "    res(null);",
+      "  }, $2);",
+      "});",
+      "$0"
+    ]
+  }
+}
