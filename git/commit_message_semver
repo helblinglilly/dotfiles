@@ -1,0 +1,23 @@
+# Commit messages should follow semantic release standards.
+# The first character after the prefix must be lowercase
+
+# NO NEW RELEASE
+# docs:
+# style:
+# test:
+# chore:
+# ci:
+# build:
+
+# PATCH
+# fix:
+# perf:
+# refactor:
+# deps:
+# revert:
+
+# MINOR
+# feat:
+
+# MAJOR
+# breaking:

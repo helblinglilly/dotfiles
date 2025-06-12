@@ -1,0 +1,13 @@
+[commit]
+	template = ~/.utility/git/commit_message
+[core]
+	excludesfile = ~/.utility/git/.gitignore_global
+[alias]
+	nuke = "!git clean -df && git reset --hard HEAD"
+[help]
+	autocorrect = 10
+[pager]
+	stash = cat
+	branch = cat
+[push]
+	autoSetupRemote = true
