@@ -66,3 +66,8 @@ function branchRename(){
 function glog(){
   git log --format=format:"%Cgreen%ah%Creset %Cred%h%Creset %C(yellow)%an%Creset %n%s%n%n%b%n" "$@"
 }
+
+function glast(){
+  git log -1 --pretty=%B | tail -n +2
+  git log -1 --pretty=%B | tail -n +2 | pbcopy
+}
