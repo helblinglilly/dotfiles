@@ -29,8 +29,4 @@ export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export EDITOR=nano;
 
-for file in ~/.utility/dotfiles/*.zsh; do
-. $file
-done
-
 AWS_DEFAULT_PROFILE=""

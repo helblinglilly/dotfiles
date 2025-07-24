@@ -1,7 +1,7 @@
 [commit]
-	template = ~/.utility/git/commit_message
+	template = ~/.utility/dotfiles/git/commit_message
 [core]
-	excludesfile = ~/.utility/git/.gitignore_global
+	excludesfile = ~/.utility/dotfiles/git/.gitignore_global
 [alias]
 	nuke = "!git clean -df && git reset --hard HEAD"
 [help]
@@ -11,3 +11,5 @@
 	branch = cat
 [push]
 	autoSetupRemote = true
+[init]
+	defaultBranch = main

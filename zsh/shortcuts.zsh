@@ -1,8 +1,8 @@
 
 function edit(){
-  code ~/.utility
+  zed ~/.utility
 }
 
 function reload(){
-    source ~/.zshrc
+  source ~/.zshrc
 }

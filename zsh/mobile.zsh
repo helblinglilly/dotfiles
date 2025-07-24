@@ -13,10 +13,10 @@ function mobileHelp(){
 }
 
 function ios(){
-  sh ~/.utility/mobile/ios.sh
+  sh ~/.utility/dotfiles/mobile/ios.sh
 }
 
 
 function android(){
-	sh ~/.utility/mobile/android.sh
+	sh ~/.utility/dotfiles/mobile/android.sh
 }
