@@ -1,1 +1,7 @@
 .DS_Store
+.idea
+.zed
+coverage
+dist
+newrelic_agent.logzed
+node_modules
