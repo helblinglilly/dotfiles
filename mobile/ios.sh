@@ -5,8 +5,8 @@ devices=$(xcrun simctl list devices -j)
 
 # Use jq to filter available devices (ignoring unavailable ones) and extract name and UUID
 available_devices=$(echo "$devices" | jq -r '
-	.devices[] |
-	map(select(.isAvailable == true)) |
+	.devices[] | 
+	map(select(.isAvailable == true)) | 
 	map(select(.state == "Shutdown" or .state == "Booted")) |
 	.[] | "\(.name) (\(.state)) - \(.udid)"')
 
