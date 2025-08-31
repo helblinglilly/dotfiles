@@ -1,0 +1,15 @@
+{
+  "reactFn": {
+    "description": "Creates a react functional component",
+    "prefix": "reactFn",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export const $1 = ({} : {}) => {",
+      "  return (",
+      "    <>$0</>",
+      "  );",
+      "}"
+    ]
+  }
+}

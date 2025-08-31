@@ -1,0 +1,15 @@
+{
+  "waitPromise": {
+    "description": "Creates an empty promise and resolves it after 1 sec",
+    "prefix": "waitPromise",
+    "body": [
+      "await new Promise(res => {",
+      "  setTimeout(() => {",
+      "    $1",
+      "    res(null);",
+      "  }, $2);",
+      "});",
+      "$0"
+    ]
+  }
+}

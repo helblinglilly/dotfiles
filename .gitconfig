@@ -1,0 +1,6 @@
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[alias]
+    nuke = "!git clean -fdx && git reset --hard HEAD"

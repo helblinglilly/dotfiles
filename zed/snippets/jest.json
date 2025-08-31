@@ -1,0 +1,30 @@
+{
+  "mockReact": {
+    "description": "Mocks a react component and places a div with its name",
+    "prefix": "mockReact",
+    "body": ["jest.mock('$1', () => () => {", "  return <div>$2</div>;", "});$0"]
+  },
+  "mockHook": {
+    "description": "Mocks a hook and its return value after being called",
+    "prefix": "mockHook",
+    "body": ["jest.mock('$1', () => () => ({", " $2: $3,", "}));"]
+  },
+  "mockFn": {
+    "description": "Mock an exported function from a module",
+    "prefix": "mockFn",
+    "body": ["jest.mock('$1', () => ({", "  $2: jest.fn(),", "}));", "$0"]
+  },
+  "itEach": {
+    "description": "Create a it.each block",
+    "prefix": "itEach",
+    "body": [
+      "it.each([",
+      " [$1, $2],",
+      " [$1, $2],",
+      "])(\"input %s equals %s expected\", $3 (input, expected) => {",
+      " $0",
+      " expect(input).toBe(expected);",
+      "});"
+    ]
+  }
+}

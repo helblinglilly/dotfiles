@@ -1,0 +1,35 @@
+{
+  "rnstyle": {
+    "description": "Creates a react native stylesheet - not a hook. Use rnstylehook for that",
+    "prefix": "rnstyle",
+    "body": [
+      "import { StyleSheet } from 'react-native';",
+      "",
+      "export const styles = StyleSheet.create({",
+      "  container: {",
+      "    $0",
+      "  },",
+      "});"
+    ]
+  },
+  "rnstylehook": {
+    "description": "Creates a react native stylesheet hook",
+    "prefix": "rnstylehook",
+    "body": [
+      "import { StyleSheet } from 'react-native';",
+      "import { useResponsive } from 'react-native-responsive-hook';",
+      "",
+      "import { isLargeDevice } from '@theme/breakpoints';",
+      "",
+      "export const useStyles = () => {",
+      "  const styles = StyleSheet.create({",
+      "    container: {",
+      "     width: isLargeDevice(breakPointGroup) ? '30%' : '50%'",
+      "     $0",
+      "    }",
+      "  })",
+      "  return { styles }",
+      "}"
+    ]
+  }
+}
