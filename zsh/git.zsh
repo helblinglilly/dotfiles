@@ -71,3 +71,7 @@ function glast(){
   git log -1 --pretty=%B | tail -n +2
   git log -1 --pretty=%B | tail -n +2 | pbcopy
 }
+
+function gc(){
+  git commit "$@"
+}
