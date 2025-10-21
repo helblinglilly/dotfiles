@@ -1,0 +1,51 @@
+{
+  "mswError": {
+    "description": "Mock an error - cursor placed at URL starting point",
+    "prefix": "mswError",
+    "body": [
+      "server.use(",
+      " http.get(",
+      "   'https://example.com/hello$1',",
+      "   () => {",
+      "     return HttpResponse.json(",
+      "       { message: \"Internal server error\" },",
+      "       { status: 500 }",
+      "     );",
+      "   },",
+      " )",
+      ");"
+    ]
+  },
+  "mswDelay": {
+    "description": "Mock a never resolving response - cursor placed at URL starting point",
+    "prefix": "mswDelay",
+    "body": [
+      "server.use(",
+      " http.get(",
+      "   'https://example.com/hello$1',",
+      "   async () => {",
+      "     await delay('infinite');",
+      "     return HttpResponse.json(",
+      "       { message: \"Internal server error\" },",
+      "       { status: 500 }",
+      "     );",
+      "   },",
+      " )",
+      ");"
+    ]
+  },
+  "mswSuccess": {
+    "description": "Mock a response - cursor placed at URL starting point",
+    "prefix": "mswSuccess",
+    "body": [
+      "server.use(",
+      " http.get(",
+      "   'https://example.com/hello$1',",
+      "   () => {",
+      "     return HttpResponse.json($2);",
+      "   },",
+      " )",
+      ");"
+    ]
+  }
+}
