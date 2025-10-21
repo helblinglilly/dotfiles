@@ -5,7 +5,8 @@
       "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown",
       "alt-shift-k": "editor::DuplicateLineUp",
-      "alt-shift-j": "editor::DuplicateLineDown"
+      "alt-shift-j": "editor::DuplicateLineDown",
+      "f1": ["task::Spawn", { "task_name": "lazygit", "reveal_target": "center" }]
     }
   },
   {
