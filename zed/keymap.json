@@ -1,17 +1,20 @@
 [
   {
-    "context": "Editor",
     "bindings": {
-      "alt-k": "editor::MoveLineUp",
-      "alt-j": "editor::MoveLineDown",
-      "alt-shift-k": "editor::DuplicateLineUp",
-      "alt-shift-j": "editor::DuplicateLineDown",
+      "alt-tab": "terminal_panel::ToggleFocus",
+      "cmd-shift-r": "git_panel::ToggleFocus",
+      "f5": "task::Spawn",
       "f1": ["task::Spawn", { "task_name": "lazygit", "reveal_target": "center" }]
     }
   },
   {
+    "context": "Editor",
     "bindings": {
-      "alt-tab": "terminal_panel::ToggleFocus"
+      "; ;": ["workspace::SendKeystrokes", "escape"],
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown",
+      "alt-shift-k": "editor::DuplicateLineUp",
+      "alt-shift-j": "editor::DuplicateLineDown"
     }
   }
 ]
