@@ -26,5 +26,14 @@
       " expect(input).toBe(expected);",
       "});"
     ]
+  },
+  "expectThrow": {
+    "description": "Expect a function to throw",
+    "prefix": "expectThrow",
+    "body": [
+      "expect(() => ",
+      "  $1",
+      ").toThrow($1)"
+    ]
   }
 }
