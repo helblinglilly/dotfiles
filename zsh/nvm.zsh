@@ -1,7 +1,3 @@
-autoload -U add-zsh-hook
-
-nvm_auto_use() {
-  if [ -f .nvmrc ]; then
-    nvm use --silent >/dev/null
-  fi
-}
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

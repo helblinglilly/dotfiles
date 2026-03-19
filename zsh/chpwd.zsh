@@ -2,6 +2,10 @@
 autoload -U add-zsh-hook
 
 load-nvmrc() {
+  if ! command -v nvm &>/dev/null; then
+    return
+  fi
+
   local nvmrc_path="$(nvm_find_nvmrc)"
   if [ -n "$nvmrc_path" ]; then
     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
