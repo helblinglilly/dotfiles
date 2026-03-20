@@ -4,8 +4,8 @@
       "alt-tab": "terminal_panel::ToggleFocus",
       "cmd-shift-r": "git_panel::ToggleFocus",
       "f5": "task::Spawn",
-      "f1": ["task::Spawn", { "task_name": "lazygit", "reveal_target": "center" }]
-    }
+      "f1": ["task::Spawn", { "task_name": "lazygit", "reveal_target": "center" }],
+    },
   },
   {
     "context": "Editor",
@@ -14,7 +14,13 @@
       "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown",
       "alt-shift-k": "editor::DuplicateLineUp",
-      "alt-shift-j": "editor::DuplicateLineDown"
-    }
-  }
+      "alt-shift-j": "editor::DuplicateLineDown",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "shift-enter": ["terminal::SendText", "\u001b\r"],
+    },
+  },
 ]
