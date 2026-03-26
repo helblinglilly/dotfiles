@@ -21,4 +21,7 @@ load-nvmrc() {
 }
 
 add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# Note: load-nvmrc is intentionally NOT called at startup here.
+# NVM is lazy-loaded (see nvm.zsh), so calling it at startup would
+# eagerly initialise NVM and slow down shell startup. It will be
+# triggered naturally the first time you cd into a directory.
