@@ -37,5 +37,3 @@ emulator -avd "$selected_avd" &
 
 # Wait for the emulator to start (you can tweak this if needed)
 sleep 5
-
-echo "Android emulator $selected_avd is booting."
