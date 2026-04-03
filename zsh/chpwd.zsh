@@ -1,27 +1,18 @@
-# Automatically run `nvm use` when entering a directory with .nvmrc
-autoload -U add-zsh-hook
-
 load-nvmrc() {
-  if ! command -v nvm &>/dev/null; then
-    return
-  fi
+  if [ -f ".nvmrc" ]; then
+    local nvmrc_version=$(cat .nvmrc)
+    local current_version=$(node --version 2>/dev/null)
 
-  local nvmrc_path="$(nvm_find_nvmrc)"
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+    # Strip leading 'v' from both for comparison
+    local nvmrc_clean="${nvmrc_version#v}"
+    local current_clean="${current_version#v}"
+
+    if [ "$nvmrc_clean" != "$current_clean" ]; then
+      [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
       nvm use
     fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
   fi
 }
 
-add-zsh-hook chpwd load-nvmrc
-# Note: load-nvmrc is intentionally NOT called at startup here.
-# NVM is lazy-loaded (see nvm.zsh), so calling it at startup would
-# eagerly initialise NVM and slow down shell startup. It will be
-# triggered naturally the first time you cd into a directory.
+autoload -Uz add-zsh-hook
+load-nvmrc
