@@ -33,7 +33,8 @@ selected_avd="${avds[$((avd_choice - 1))]}"
 
 # Boot the selected emulator
 echo "Booting Android emulator: $selected_avd"
-emulator -avd "$selected_avd" &
+emulator -avd "$selected_avd" > /dev/null &
+
 
 # Wait for the emulator to start (you can tweak this if needed)
 sleep 5
