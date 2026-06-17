@@ -7,6 +7,15 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "project_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "edit_predictions": {
+    "provider": "copilot",
+  },
   "colorize_brackets": false,
   "indent_guides": {
     "background_coloring": "disabled",
@@ -33,18 +42,18 @@
   "bottom_dock_layout": "contained",
   "title_bar": {
     "show_menus": false,
-    "show_branch_icon": false,
   },
   "git": {
     "inline_blame": {
       "show_commit_summary": false,
     },
   },
-  "features": {
-    "edit_prediction_provider": "copilot",
-  },
   "agent": {
-    "always_allow_tool_actions": true,
+    "dock": "right",
+    "sidebar_side": "right",
+    "tool_permissions": {
+      "default": "allow",
+    },
     "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
