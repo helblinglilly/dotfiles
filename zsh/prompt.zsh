@@ -23,7 +23,7 @@ setopt PROMPT_SUBST
 
 # timestamp user@machine current and parent directory gitbranch aws
 # Use actual username
-PROMPT='%F{magenta}%*%f %F{green}%B%n@%m%f%b%F{white} %f%F{cyan}%B%2d%b%f%F{yellow}${vcs_info_msg_0_}%f %F{yellow}${AWSPROFILE}%f>'
+PROMPT='%F{magenta}%*%f %F{green}%B%n@%m%f%b%F{white} %f%F{cyan}%B%2~%b%f%F{yellow}${vcs_info_msg_0_}%f %F{yellow}${AWSPROFILE}%f>'
 
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
