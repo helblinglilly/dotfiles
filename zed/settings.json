@@ -109,7 +109,7 @@
   "outline_panel": {
     "button": true,
   },
-  "file_scan_exclusions": ["**/.bundle", "**/vendor/bundle", "**/.idea"],
+  "file_scan_exclusions": ["**/.bundle", "**/vendor/bundle", "**/.idea", ".claude/worktrees/**"],
   "tab_bar": {
     "show_nav_history_buttons": false,
   },
