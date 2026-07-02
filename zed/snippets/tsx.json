@@ -1,15 +1,48 @@
 {
-  "waitPromise": {
-    "description": "Creates an empty promise and resolves it after 1 sec",
-    "prefix": "waitPromise",
+  "rnstyle": {
+    "description": "Creates a react native stylesheet - not a hook. Use rnstylehook for that",
+    "prefix": "rnstyle",
     "body": [
-      "await new Promise(res => {",
-      "  setTimeout(() => {",
-      "    $1",
-      "    res(null);",
-      "  }, $2);",
-      "});",
-      "$0"
+      "import { StyleSheet } from 'react-native';",
+      "",
+      "export const styles = StyleSheet.create({",
+      "  container: {",
+      "    $0",
+      "  },",
+      "});"
+    ]
+  },
+  "rnstylehook": {
+    "description": "Creates a react native stylesheet hook",
+    "prefix": "rnstylehook",
+    "body": [
+      "import { StyleSheet } from 'react-native';",
+      "import { useResponsive } from 'react-native-responsive-hook';",
+      "",
+      "import { isLargeDevice } from '@theme/breakpoints';",
+      "",
+      "export const useStyles = () => {",
+      "  const styles = StyleSheet.create({",
+      "    container: {",
+      "     width: isLargeDevice(breakPointGroup) ? '30%' : '50%'",
+      "     $0",
+      "    }",
+      "  })",
+      "  return { styles }",
+      "}"
+    ]
+  },
+  "reactFn": {
+    "description": "Creates a react functional component",
+    "prefix": "reactFn",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export const $1 = ({} : {}) => {",
+      "  return (",
+      "    <>$0</>",
+      "  );",
+      "}"
     ]
   },
   "mswError": {
@@ -61,6 +94,16 @@
       ");"
     ]
   },
+  "mockReact": {
+    "description": "Mocks a react component and places a div with its name",
+    "prefix": "mockReact",
+    "body": ["jest.mock('$1', () => () => {", "  return <div>$2</div>;", "});$0"]
+  },
+  "mockHook": {
+    "description": "Mocks a hook and its return value after being called",
+    "prefix": "mockHook",
+    "body": ["jest.mock('$1', () => () => ({", " $2: $3,", "}));"]
+  },
   "mockFn": {
     "description": "Mock an exported function from a module",
     "prefix": "mockFn",
@@ -78,11 +121,6 @@
       " expect(input).toBe(expected);",
       "});"
     ]
-  },
-  "mockHook": {
-    "description": "Mocks a hook and its return value after being called",
-    "prefix": "mockHook",
-    "body": ["jest.mock('$1', () => () => ({", " $2: $3,", "}));"]
   },
   "expectThrow": {
     "description": "Expect a function to throw",

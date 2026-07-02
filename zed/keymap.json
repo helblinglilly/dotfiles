@@ -17,6 +17,16 @@
       "alt-shift-j": "editor::DuplicateLineDown",
     },
   },
+
+  {
+    "context": "VimControl",
+    "bindings": {
+      "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
+      "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
+      "ctrl-f": ["workspace::SendKeystrokes", "ctrl-f z z"],
+      "ctrl-b": ["workspace::SendKeystrokes", "ctrl-b z z"],
+    },
+  },
   {
     "context": "Terminal",
     "bindings": {
