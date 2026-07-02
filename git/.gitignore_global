@@ -5,3 +5,5 @@ coverage
 dist
 newrelic_agent.logzed
 node_modules
+
+.claude/settings.local.json
