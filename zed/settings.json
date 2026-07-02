@@ -1,4 +1,10 @@
 {
+  "context_servers": {
+    "mcp-server-gitlab": {
+      "enabled": true,
+      "remote": false
+    }
+  },
   "project_panel": {
     "dock": "left"
   },
