@@ -1,9 +1,13 @@
 [commit]
 	template = ~/.utility/dotfiles/git/commit_message
+	verbose = true
 [core]
 	excludesfile = ~/.utility/dotfiles/git/.gitignore_global
 [alias]
 	nuke = "!git clean -df && git reset --hard HEAD"
+	ignore-local  = update-index --skip-worktree
+  unignore-local = update-index --no-skip-worktree
+  ignored-local = "!git ls-files -v | grep '^S'"
 [help]
 	autocorrect = 10
 [pager]
