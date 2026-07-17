@@ -4,3 +4,4 @@
 	autoSetupRemote = true
 [alias]
     nuke = "!git clean -fdx && git reset --hard HEAD"
+    current = "!git branch --show-current"
