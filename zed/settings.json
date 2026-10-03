@@ -47,15 +47,25 @@
     }
   },
   "agent": {
+    "threads_sidebar": {
+      "position": "right"
+    },
+    "sandbox_permissions": {
+      "allow_unsandboxed": true,
+      "network_hosts": [
+        "api.cloudflare.com"
+      ]
+    },
     "dock": "right",
-    "sidebar_side": "right",
     "tool_permissions": {
       "default": "allow"
     },
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "effort": "medium",
+      "enable_thinking": true,
+      "provider": "openai-subscribed",
+      "model": "gpt-5.6-terra"
     },
     "model_parameters": []
   },
@@ -88,7 +98,7 @@
       "breadcrumbs": false
     },
     "env": {
-      "GIT_EDITOR": "zed --wait"
+      "GIT_EDITOR": "zed --wait --add"
     }
   },
   "inlay_hints": {
