@@ -6,7 +6,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo "mac setup"
 
     echo "=== Decreating Dock auto-hide animation time ==="
-    defaults write com.apple.dock autohide-time-modifier -float 0.2 && killAll Dock
+    defaults write com.apple.dock autohide-time-modifier -float 0.45 && killAll Dock
 
     echo "=== Configuring .zshrc file ==="
     cat >> "$HOME/.zshrc" <<'EOF'
