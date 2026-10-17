@@ -1,9 +1,5 @@
 {
   "context_servers": {
-    "mcp-server-gitlab": {
-      "enabled": true,
-      "remote": false
-    }
   },
   "project_panel": {
     "dock": "left"
@@ -12,7 +8,7 @@
     "dock": "left"
   },
   "edit_predictions": {
-    "provider": "copilot"
+    "provider": null
   },
   "colorize_brackets": false,
   "indent_guides": {
@@ -65,7 +61,7 @@
       "effort": "medium",
       "enable_thinking": true,
       "provider": "openai-subscribed",
-      "model": "gpt-5.6-terra"
+      "model": "gpt-6-luna"
     },
     "model_parameters": []
   },
@@ -74,7 +70,7 @@
   },
   "show_edit_predictions": false,
   "vim_mode": true,
-  "theme": "Zedokai Darker (Filter Ristretto)",
+  "theme": "Zedokai",
   "icon_theme": {
     "mode": "system",
     "light": "Material Icon Theme",
@@ -109,9 +105,6 @@
   },
   "preferred_line_length": 100,
   "collaboration_panel": {
-    "button": false
-  },
-  "notification_panel": {
     "button": false
   },
   "outline_panel": {
@@ -176,11 +169,6 @@
         100
       ],
       "format_on_save": "on"
-    },
-    "SCSS": {
-      "code_actions_on_format": {
-        "source.fixAll.stylelint": true
-      }
     },
     "Git Commit": {
       "wrap_guides": [
