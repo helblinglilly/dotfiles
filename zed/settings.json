@@ -40,9 +40,17 @@
   "git": {
     "inline_blame": {
       "show_commit_summary": false
-    }
+   },
+   "auto_fetch": {
+     "enabled": true,
+     "interval_secs": 60
+   }
   },
   "agent": {
+    "expand_terminal_card": false,
+    "expand_edit_card": false,
+    "thinking_display": "always_collapsed",
+    "play_sound_when_agent_done": "when_hidden",
     "threads_sidebar": {
       "position": "right"
     },
@@ -171,6 +179,7 @@
       "format_on_save": "on"
     },
     "Git Commit": {
+      "show_wrap_guides": true,
       "wrap_guides": [
         50,
         72
