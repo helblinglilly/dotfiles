@@ -1,5 +1,6 @@
 [
   {
+    // Hit shfit +
     "bindings": {
       "alt-tab": "terminal_panel::ToggleFocus",
       "cmd-shift-r": "git_panel::ToggleFocus",
@@ -31,6 +32,41 @@
     "context": "Terminal",
     "bindings": {
       "shift-enter": ["terminal::SendText", "\u001b\r"],
+    },
+  },
+  {
+    // From the threads panel, hit escape to return to the current thread
+    "context": "ThreadsSidebar && not_searching",
+    "bindings": { "escape": "multi_workspace::FocusWorkspaceSidebar" }
+  },
+  {
+    // From the agent panel, focus the sidebar and skip past the search box into the thread list.
+    "context": "AgentPanel",
+    "bindings": {
+      "cmd-alt-;": ["workspace::SendKeystrokes", "cmd-alt-; down j"],
+    },
+  },
+  {
+    // Outside the threads sidebar, cmd-alt-j brings up the panel, and I want to focus outside of the search
+    "context": "Workspace",
+    "bindings": {
+      "cmd-alt-j": ["workspace::SendKeystrokes", "cmd-alt-; down j"],
+    },
+  },
+  {
+    // Inside the sidebar, cmd-alt-j hides it and focus returns, with no extra keys sent.
+    "context": "ThreadsSidebar",
+    "bindings": {
+      "cmd-alt-j": "multi_workspace::ToggleWorkspaceSidebar",
+    },
+  },
+  {
+    // Jump between prompts in an agent thread (no page up/down keys on this keyboard).
+    // "AcpThread > Editor" wins over the default cmd-alt-up/down "add cursor" bindings in the message box.
+    "context": "AcpThread || (AcpThread > Editor)",
+    "bindings": {
+      "cmd-alt-up": "agent::ScrollOutputToPreviousMessage",
+      "cmd-alt-down": "agent::ScrollOutputToNextMessage",
     },
   },
 ]
